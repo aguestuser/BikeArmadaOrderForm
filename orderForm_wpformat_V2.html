@@ -1,0 +1,223 @@
+<code>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+	<script type="text/javascript" src="http://brooklynbikearmada.com/scripts/processOrderFormV2.js"></script>
+	<script type="text/javascript" src="http://brooklynbikearmada.com/scripts/openGeocoder.js"></script>
+	<script type="text/javascript">
+	<!--
+		processOrderForm();
+	//-->
+	</script>
+</code>
+
+<div style="position:relative; top:-180px; top:-12.85714286rem;">
+	<p>We offer home delivery of CSA shares for $8 a delivery. Plus the following add-on fees:</p>
+					<ul>
+						<li> $5 for any combination of:
+							<ul>
+								<li> Out-of-range deliveries (deliveries outside of Crown Heights)</li> 
+								<li> Late-night deliveries (any delivery after 10pm)</li>
+								<li> Rush orders (any order placed after 4pm on your CSA's pickup day)</li>
+							</ul>
+						</li>
+						<li> $2 as a donation to Crown Heights Farm Share's subsidized share program.</li>
+						<li> A credit card processing fee of $0.30 plus 2.9% the value of your order.</li>
+					</ul>	
+					<p>Please use the following form to complete your order. If you experience any problems or don't receive an email receipt for your order, please email us at <a href='mailto:bkbikearmada@gmail.com'>bkbikearmada@gmail.com</a> or call 347-450-5732.</p>	
+					<p class = "ss-form-notification">Note: "*" indicates a required field.</p>	
+</div>
+
+<div id="error-box">
+</div>
+
+<div class="ss-form-container">
+	<div class="ss-top-of-page">
+		<div class="ss-form-heading">
+			<div class="ss-form-desc ss-no-ignore-whitespace"></div>
+		</div>
+	</div>
+		
+	<div class="ss-form">
+	
+		<form action="http://brooklynbikearmada.com/scripts/formHandlerWpV2.php" method="POST" id="ss-form">
+
+
+				<div class="ss-form-question errorbox-good">
+					<div dir="ltr" class="ss-item  ss-text">
+						<div class="ss-form-entry">
+							<label class="ss-q-item-label" for="entry_1435501357">
+								<div class="ss-q-title">NAME</div>
+								<div class="ss-q-help ss-secondary-text" dir="ltr">What is the name under which your share is listed at the CSA?</div></label><input type="text" name="entry.1435501357" value="" class="ss-q-short" id="entry_1435501357" dir="auto">
+						</div>
+					</div>
+				</div> 
+				<div class="ss-form-question errorbox-good" style="float:left;">
+					<div dir="ltr" class="ss-item  ss-text">
+						<div class="ss-form-entry">
+							<label class="ss-q-item-label" for="entry_1858643763">
+								<div class="ss-q-title">STREET NUMBER</div>
+								<div class="ss-q-help ss-secondary-text" dir="ltr"></div></label><input type="text" name="entry.1858643763" value="" class="ss-q-short" id="entry_1858643763" dir="auto">
+						</div>
+					</div>				
+				</div> 
+				<div class="ss-form-question errorbox-good" style="display: inline-block; margin-left: 10px; margin-left:0.71428571rem;">
+					<div dir="ltr" class="ss-item  ss-text">
+						<div class="ss-form-entry">
+							<label class="ss-q-item-label" for="entry_301402882">
+								<div class="ss-q-title">APT.</div>
+								<div class="ss-q-help ss-secondary-text" dir="ltr"></div></label><input type="text" name="entry.301402882" value="" style="width:30px; width:2.14285714rem;" id="entry_301402882" dir="auto" title="">
+						</div>
+					</div>
+				</div> 
+				<div class="ss-form-question errorbox-good" style="display: inline-block; margin-left: 10px; margin-left:0.71428571rem;">
+					<div dir="ltr" class="ss-item  ss-text">
+						<div class="ss-form-entry">
+							<label class="ss-q-item-label" for="entry_1557860690">
+								<div class="ss-q-title">CITY</div>
+								<div class="ss-q-help ss-secondary-text" dir="ltr"></div></label><input type="text" name="entry.1557860690" value="Brooklyn" style="width:60px; width:4.28571429rem;" id="entry_1557860690" dir="auto">
+						</div>
+					</div>
+				</div>  
+				<div class="ss-form-question errorbox-good" style="display: inline-block; margin-left: 10px; margin-left:0.71428571rem;">
+					<div dir="ltr" class="ss-item  ss-select">
+						<div class="ss-form-entry">
+							<label class="ss-q-item-label" for="entry_1617053665">
+							<div class="ss-q-title">STATE</div>
+							<div class="ss-q-help ss-secondary-text" dir="ltr"></div></label><input type="text" name="entry.1617053665" value="NY" style="width:30px; width:2.14285714rem;" id="entry_1557860690" dir="auto">
+						</div>
+					</div> 				
+				</div> 
+				<div id="out-of-range-notice">
+				</div>					
+				<div class="ss-form-question errorbox-good">
+					<div dir="ltr" class="ss-item  ss-date">
+						<div class="ss-form-entry">
+							<label class="ss-q-item-label" for="entry_448789933">
+								<div class="ss-q-title">DATE</div>
+								<div class="ss-q-help ss-secondary-text" dir="ltr">When would you like your share delivered?</div></label><input type="date" name="entry.448789933" value="" class="ss-q-date" dir="auto" id="entry_448789933">
+						</div>
+					</div>
+					<div id="rush-notice">
+					</div>	
+				</div>
+				<div class="ss-form-question errorbox-good">
+					<div dir="ltr" class="ss-item  ss-text">
+						<div class="ss-form-entry">
+							<label class="ss-q-item-label" for="entry_1759796835">
+								<div class="ss-q-title">PHONE</div>
+								<div class="ss-q-help ss-secondary-text" dir="ltr">What&#39;s the best phone number to reach you at with questions about your delivery?</div></label><input type="text" name="entry.1759796835" value="" class="ss-q-short" id="entry_1759796835" dir="auto">
+						</div>
+					</div>
+				</div> 
+				<div class="ss-form-question errorbox-good">
+					<div dir="ltr" class="ss-item  ss-text">
+						<div class="ss-form-entry">
+							<label class="ss-q-item-label" for="entry_232186884">
+								<div class="ss-q-title">EMAIL</div>
+								<div class="ss-q-help ss-secondary-text" dir="ltr">What&#39;s the best email address to send a receipt to?</div></label><input type="text" name="entry.232186884" value="" class="ss-q-short" id="entry_232186884" dir="auto">
+						</div>
+					</div>
+				</div> 
+				<div class="ss-form-question errorbox-good">
+					<div dir="ltr" class="ss-item  ss-select">
+						<div class="ss-form-entry">
+							<label class="ss-q-item-label" for="entry_1691508623">
+								<div class="ss-q-title">CSA</div>
+								<div class="ss-q-help ss-secondary-text" dir="ltr">What CSA do you belong to?</div>
+							</label>
+							<select name="entry.1691508623" id="entry_1691508623">
+								<option value=""></option>
+								<option value="Crown Heights Farm Share">Crown Heights Farm Share</option> 
+								<option value="Prospect Park CSA">Prospect Park CSA</option>
+							</select>
+						</div>
+					</div>
+					<div id="donation-notice">
+					</div>
+				</div> 
+			<div class="ss-form-question errorbox-good">
+				<div dir="ltr" class="ss-item  ss-checkbox">
+					<div class="ss-form-entry">
+						<label class="ss-q-item-label" for="entry_230023227[]">
+							<div class="ss-q-title">SHARES</div>
+							<div class="ss-q-help ss-secondary-text" dir="ltr">What shares do you order from the CSA?</div>
+						</label>
+						<ul class="ss-choices">
+						
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.230023227[]" value="Full Veggie" id="group_230023227_1" class="ss-q-checkbox"></span><span class="ss-choice-label">Full Veggie</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.230023227[]" value="Partial Veggie" id="group_230023227_2" class="ss-q-checkbox"></span><span class="ss-choice-label">Partial Veggie</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.230023227[]" value="Fruit" id="group_230023227_3" class="ss-q-checkbox"></span><span class="ss-choice-label">Fruit</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.230023227[]" value="Eggs" id="group_230023227_4" class="ss-q-checkbox"></span><span class="ss-choice-label">Eggs</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.230023227[]" value="Milk" id="group_230023227_5" class="ss-q-checkbox"></span><span class="ss-choice-label">Milk</span></label></li>
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.230023227[]" value="Half and Half" id="group_230023227_6" class="ss-q-checkbox"></span><span class="ss-choice-label">Half and Half</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.230023227[]" value="Butter" id="group_230023227_7" class="ss-q-checkbox"></span><span class="ss-choice-label">Butter</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.230023227[]" value="Cheese" id="group_230023227_8" class="ss-q-checkbox"></span><span class="ss-choice-label">Cheese</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.230023227[]" value="Yogurt" id="group_230023227_9" class="ss-q-checkbox"></span><span class="ss-choice-label">Yogurt</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.230023227[]" value="Meat" id="group_230023227_10" class="ss-q-checkbox"></span><span class="ss-choice-label">Meat</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.230023227[]" value="Fish" id="group_230023227_11" class="ss-q-checkbox"></span><span class="ss-choice-label">Fish</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.230023227[]" value="Flowers" id="group_230023227_12" class="ss-q-checkbox"></span><span class="ss-choice-label">Flowers</span></label></li>
+						</ul>
+					</div>
+				</div>
+			</div> 
+			<div class="ss-form-question errorbox-good">
+				<div dir="ltr" class="ss-item  ss-radio ss-margin-offset">
+					<div class="ss-form-entry">
+						<label class="ss-q-item-label" for="entry_1400642478">
+							<div class="ss-q-title">TIME CONSTRAINTS</div>
+							<div class="ss-q-help ss-secondary-text" dir="ltr">Would you like us to deliver your share after a particular time? If so, choose from one of our two hour windows below. (Note: we charge an extra $5 for deliveries in the 10pm-12am window.)</div>
+						</label>
+						<ul class="ss-choices">		
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1528132682" value="No time constraints" id="group_1528132682_1" class="ss-q-radio late-night-time" aria-label="No time constraints"></span><span class="ss-choice-label">No time constraints</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1528132682" value="7pm-9pm" id="group_1528132682_2" class="ss-q-radio" aria-label="7pm-9pm"></span><span class="ss-choice-label">7pm-9pm</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1528132682" value="8pm-10pm" id="group_1528132682_3" class="ss-q-radio late-night-time" aria-label="After 8pm"></span><span class="ss-choice-label">8pm-10pm</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1528132682" value="9pm-11pm" id="group_1528132682_4" class="ss-q-radio late-night-time" aria-label="After 9pm"></span><span class="ss-choice-label">9pm-11pm</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1528132682" value="10pm-12am" id="group_1528132682_5" class="ss-q-radio late-night-time" aria-label="After 10pm"></span><span class="ss-choice-label">10pm-12am</span></label></li>
+						</ul>
+					</div>
+				</div>
+				<div id="late-night-notice">
+				</div>
+			</div>
+			<div class="ss-form-question errorbox-good">
+				<div dir="ltr" class="ss-item  ss-paragraph-text">
+					<div class="ss-form-entry">
+						<label class="ss-q-item-label" for="entry_430750815">
+							<div class="ss-q-title">SPECIAL REQUESTS</div>
+							<div class="ss-q-help ss-secondary-text" dir="ltr">Want us to leave your share in the lobby or with a neighbor? Have a broken buzzer? Will you only be home to receive the delivery during a particular window? Want us to pick up kale instead of chard? Let us know!</div>
+						</label>
+						<textarea name="entry.430750815" rows="4" cols="0" class="ss-q-long" id="entry_430750815" dir="auto"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="ss-form-question errorbox-good">
+				<div dir="ltr" class="ss-item  ss-radio ss-margin-offset">
+					<div class="ss-form-entry">
+						<label class="ss-q-item-label" for="entry_964302445">
+							<div class="ss-q-title">PAYMENT</div>
+							<div class="ss-q-help ss-secondary-text" dir="ltr">How would you like to pay?</div>
+						</label>
+						<ul class="ss-choices">
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.964302445" value="Credit Card" id="group_964302445_1" class="ss-q-radio payment-method" aria-label="Credit Card"></span><span class="ss-choice-label">Credit Card</span></label></li> 
+							<li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.964302445" value="Cash on Delivery" id="group_964302445_2" class="ss-q-radio payment-method" aria-label="Cash on Delivery"></span><span class="ss-choice-label">Cash on Delivery</span></label></li>
+						</ul>
+					</div>
+				</div>
+				<div id="paypal-notice">
+				</div>
+			</div> 
+			
+			<div id='hidden-values'>
+			</div>
+			
+			<div id="amount-owed-notice">
+				<p>AMOUNT OWED <br/><strong>You will owe a total of $8.00 for this order.</strong></p>
+			</div>
+			
+			<div class="ss-item ss-navigate">
+				<table id="navigation-table"><tbody><tr><td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr"><input type="submit" name="submit" value="Submit" id="ss-submit"></td></tr></tbody></table>
+			</div>
+
+		</form>
+	</div>
+</div>
